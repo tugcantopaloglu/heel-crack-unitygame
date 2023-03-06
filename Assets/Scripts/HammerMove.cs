@@ -14,7 +14,7 @@ public class HammerMove : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && isHitDone)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && isHitDone&& SceneSwitch.isGameStart)
         {
             RotateObject();
         }

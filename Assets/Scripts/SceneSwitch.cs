@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneSwitch : MonoBehaviour
 {
     [SerializeField] public GameObject Menu;
-    private static bool gameisStart = false;
+    public static bool isGameStart = false;
 
     private void Awake()
     {
@@ -22,10 +22,11 @@ public class SceneSwitch : MonoBehaviour
     }
     public void StartGame()
     {
-        gameisStart = true;
-        if (gameisStart)
+        if (!isGameStart)
         {
             Menu.SetActive(false);
+            isGameStart = true;
+
         }
         else
         {
