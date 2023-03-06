@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneSwitch : MonoBehaviour
+public class GameStart : MonoBehaviour
 {
     [SerializeField] public GameObject Menu;
     public static bool isGameStart = false;
@@ -13,9 +13,9 @@ public class SceneSwitch : MonoBehaviour
        
     }
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
-        if(Input.GetMouseButtonDown(0)) // Sol fare düğmesine tıklandığında
+        if(Input.GetMouseButtonDown(0) && !isGameStart) // Sol fare düğmesine tıklandığında
         {
             StartGame();
         }
@@ -30,7 +30,7 @@ public class SceneSwitch : MonoBehaviour
         }
         else
         {
-            Debug.Log("Oyun Durduruldu.");
+                Debug.Log("Oyun Durduruldu.");
         }
         
     }
